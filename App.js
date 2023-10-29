@@ -9,6 +9,8 @@ export default function App() {
 
   const [statusMessage, setStatusMessage] = useState("")
 
+  const [completed, setCompleted] = useState(0)
+
   const pressDeleteHandler = (key) => {
     setTodos((prev)=> {
       return prev.filter((todo)=> todo.key != key)
@@ -21,11 +23,12 @@ export default function App() {
   const pressCheckHandler = (key) => {
     const updatedTasks = todos.map((todo) => {
       if (key === todo.key) {
+        todo.completed ? setCompleted((prev) => prev - 1): setCompleted((prev)=> prev + 1)
         return { ...todo, completed: !todo.completed };
       }
       return todo;
     });
-
+    
     setTodos(updatedTasks)
   }
 
@@ -65,6 +68,8 @@ export default function App() {
           <View style={styles.list} >
             {todos.length == 0 ?
             <Text style={styles.hint} >Empty List </Text> :
+            <>
+            <Text>{completed}/{todos.length} Completed</Text>
             <FlatList
             data={todos}
             renderItem={({ item })=> (
@@ -72,7 +77,8 @@ export default function App() {
               item={item} pressDeleteHandler={pressDeleteHandler} 
               pressCheckHandler={pressCheckHandler} />
             )}
-            />}
+            />
+            </>}
           </View>
         </View>
         <StatusBar style={{backgroundColor: styles.container.backgroundColor}} />

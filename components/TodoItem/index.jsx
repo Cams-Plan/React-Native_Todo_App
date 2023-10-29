@@ -4,7 +4,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const todoItem = ({ item, pressDeleteHandler, pressCheckHandler }) => {
   return (
-      <View style={item.completed ? {...styles.item, borderColor: "green", borderStyle: "solid"} : styles.item} >
+      <TouchableOpacity>
+        <View style={item.completed ? {...styles.item, borderColor: "green", borderStyle: "solid"} : styles.item} >
+        
         {item.completed == true ? <TouchableOpacity>
           <MaterialIcons 
             name="check-box" 
@@ -27,8 +29,8 @@ const todoItem = ({ item, pressDeleteHandler, pressCheckHandler }) => {
         color="#d10606"
         style={styles.deleteIcon} 
         onPress={()=> pressDeleteHandler(item.key)}/>
-      </TouchableOpacity>  
-      </View>
+      </TouchableOpacity> 
+      </View></TouchableOpacity> 
     
   )
 }
