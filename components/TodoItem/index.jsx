@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "grey",
     textAlign: "center",
+    textAlignVertical: "center",
     padding: 10
   }
 })
