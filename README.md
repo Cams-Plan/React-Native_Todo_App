@@ -5,6 +5,10 @@ A simple Frontend Todo List app for practising React-Native in preparation for b
 
 This was made with the guide of NetNinja's React-Native course, but I also added my own additional touches.
 
+## Video Demo (progression branch version)
+
+
+
 ## Branches:
 
 | Branch Name | Description | Terminal CMD |
