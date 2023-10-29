@@ -7,7 +7,9 @@ This was made with the guide of NetNinja's React-Native course, but I also added
 
 ## Video Demo (progression branch version)
 
-
+<div align="center">
+  <video src="https://github.com/Cams-Plan/React-Native_Todo_App/assets/110306796/2b9aa42c-d2a3-4e91-985a-ac69e74a0f0f" />
+</div>
 
 ## Branches:
 
