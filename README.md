@@ -1,7 +1,7 @@
 # React-Native Todo List Mobile App 📱
 
 ## Description:
-A simple Todo List app for practising React-Native in preparation for bigger projects. 
+A simple Frontend Todo List app for practising React-Native in preparation for bigger projects. 
 
 This was made with the guide of NetNinja's React-Native course, but I also added my own additional touches.
 
