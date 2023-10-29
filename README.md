@@ -1,4 +1,4 @@
-# React-Native Todo List Mobile App
+# React-Native Todo List Mobile App 📱
 
 ## Description:
 A simple Todo List app for practising React-Native in preparation for bigger projects. 
@@ -7,8 +7,10 @@ This was made with the guide of NetNinja's React-Native course, but I also added
 
 ## Branches:
 
-- main: Basic version of the project (`git switch origin main`)
-- progression: An extention of the basic code with more features (`git switch origin progression`)
+| Branch Name | Description | Terminal CMD |
+|:--:|:--:|:--:|
+| __main__  | Basic version of the project  | `git switch origin main`  |
+| __progression__  | An extention of the base project with extra features | `git switch origin progression`  |
 
 ## How to Run This React-Native Project
 1. Clone the repository
