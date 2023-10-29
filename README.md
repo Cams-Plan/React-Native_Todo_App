@@ -15,8 +15,10 @@ This was made with the guide of NetNinja's React-Native course, but I also added
 ## How to Run This React-Native Project
 1. Clone the repository
     - __Clone clone the default branch (main)__:
+      
         `git clone https://github.com/Cams-Plan/React-Native_Todo_App.git <DIRECTORY NAME [Optional]>`
     - __Clone the a specific branch__:
+      
         `git clone -b <BRANCH NAME> https://github.com/Cams-Plan/React-Native_Todo_App.git <DIRECTORY NAME [Optional]>`
 2. Enter your local project directory
     `cd <PROJECT DIRECTORY>`
