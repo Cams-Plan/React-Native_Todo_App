@@ -6,9 +6,9 @@ import * as components from "./components/index"
 export default function App() {
 
   const [todos, setTodos] = useState([
-    {text: "buy coffee", status: "incomplete", key: '1'},
-    {text: "drink coffee", status: "incomplete", key: '2'},
-    {text: "clean coffee machine", status: "incomplete", key: '3'},
+    {text: "buy coffee", completed: false, key: '1'},
+    {text: "drink coffee", completed: false, key: '2'},
+    {text: "clean coffee machine", completed: false, key: '3'},
 
   ])
 
@@ -17,12 +17,22 @@ export default function App() {
       return prev.filter((todo)=> todo.key != key)
     })
   }
+  const pressCheckHandler = (key) => {
+    const updatedTasks = todos.map((todo) => {
+      if (key === todo.key) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+
+    setTodos(updatedTasks)
+  }
 
   const submitHandler = (text) => {
     if (text.length > 3){
       setTodos((prev) => {
         return [
-          {text: text, status: "incomplete", key: `${prev.length + 1}`},
+          {text: text, completed: false, key: `${prev.length + 1}`},
           ...prev
         ]
       })
@@ -51,7 +61,8 @@ export default function App() {
             data={todos}
             renderItem={({ item })=> (
               <components.TodoItem 
-              item={item} pressDeleteHandler={pressDeleteHandler} />
+              item={item} pressDeleteHandler={pressDeleteHandler} 
+              pressCheckHandler={pressCheckHandler} />
             )}
             />
             <Text style={styles.hint} >Click on Todo to Remove</Text>

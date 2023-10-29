@@ -2,12 +2,22 @@ import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
 import { MaterialIcons } from '@expo/vector-icons';
 
-const todoItem = ({ item, pressDeleteHandler }) => {
+const todoItem = ({ item, pressDeleteHandler, pressCheckHandler }) => {
   return (
     
-      <View style={styles.item} >
-        <MaterialIcons name="check-box-outline-blank" 
-        size={24} color="black" />
+      <View style={item.completed ? {...styles.item, borderColor: "green", borderStyle: "solid"} : styles.item} >
+        {item.completed == true ? <TouchableOpacity>
+          <MaterialIcons 
+            name="check-box" 
+            size={24} 
+            color="green" 
+            onPress={()=> pressCheckHandler(item.key)} />
+        </TouchableOpacity> : <TouchableOpacity>
+          <MaterialIcons name="check-box-outline-blank"
+          size={24} color="black"
+          onPress={()=> pressCheckHandler(item.key)} />
+        </TouchableOpacity>}
+        
         <Text style={styles.itemText}>   
           {item.text}
         </Text>
@@ -31,7 +41,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginTop: 16,
     borderColor: "#bbb",
-    borderWidth: 1,
+    borderWidth: 1.2,
     borderStyle: "dashed",
     borderRadius: 10
   },
