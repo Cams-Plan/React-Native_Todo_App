@@ -21,11 +21,14 @@ This was made with the guide of NetNinja's React-Native course, but I also added
       
         `git clone -b <BRANCH NAME> https://github.com/Cams-Plan/React-Native_Todo_App.git <DIRECTORY NAME [Optional]>`
 2. Enter your local project directory
+   
     `cd <PROJECT DIRECTORY>`
-3. Install dependencies
+4. Install dependencies
+   
     `npm i`
-4. Download EXPO Go on Android play store or iOS app store
-5. Start the expo-cli server
+6. Download EXPO Go on Android play store or iOS app store
+7. Start the expo-cli server
+   
     `npx expo start` OR `npm start`
-6. Scan the QR code in Expo Go (Android) or scan using your camera (iOS)
-7. The project is ready to use! 😁
+9. Scan the QR code in Expo Go (Android) or scan using your camera (iOS)
+10. The project is ready to use! 😁
