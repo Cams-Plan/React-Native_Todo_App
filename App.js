@@ -35,6 +35,7 @@ export default function App() {
   }
   
   return (
+    // <components.Sandbox />
     <TouchableWithoutFeedback onPress={() => {
       Keyboard.dismiss();
     }}>
@@ -70,10 +71,12 @@ const styles = StyleSheet.create({
     
   },
   content: {
-    padding: 40
+    padding: 40,
+    flex: 1,
   },
   list: {
-    marginTop: 20
+    marginTop: 20,
+    flex: 1,
   },
   hint : {
     marginTop: 20,
