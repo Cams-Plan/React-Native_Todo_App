@@ -4,7 +4,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const todoItem = ({ item, pressDeleteHandler, pressCheckHandler }) => {
   return (
-    
       <View style={item.completed ? {...styles.item, borderColor: "green", borderStyle: "solid"} : styles.item} >
         {item.completed == true ? <TouchableOpacity>
           <MaterialIcons 
@@ -25,7 +24,7 @@ const todoItem = ({ item, pressDeleteHandler, pressCheckHandler }) => {
         <MaterialIcons 
         name="delete" 
         size={23} 
-        color="black"
+        color="#d10606"
         style={styles.deleteIcon} 
         onPress={()=> pressDeleteHandler(item.key)}/>
       </TouchableOpacity>  
@@ -48,12 +47,10 @@ const styles = StyleSheet.create({
   itemText: {
     marginLeft: 10,
     flex: 3,
-    backgroundColor: "pink",
     fontSize: 16
   },
   deleteIcon: {
     flex: 1,
-    backgroundColor: "grey",
     textAlign: "center",
     textAlignVertical: "center",
     padding: 10

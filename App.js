@@ -5,17 +5,18 @@ import * as components from "./components/index"
 
 export default function App() {
 
-  const [todos, setTodos] = useState([
-    {text: "buy coffee", completed: false, key: '1'},
-    {text: "drink coffee", completed: false, key: '2'},
-    {text: "clean coffee machine", completed: false, key: '3'},
+  const [todos, setTodos] = useState([])
 
-  ])
+  const [statusMessage, setStatusMessage] = useState("")
 
   const pressDeleteHandler = (key) => {
     setTodos((prev)=> {
       return prev.filter((todo)=> todo.key != key)
     })
+    setStatusMessage("Sucessfully Removed")
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 2000);
   }
   const pressCheckHandler = (key) => {
     const updatedTasks = todos.map((todo) => {
@@ -36,13 +37,17 @@ export default function App() {
           ...prev
         ]
       })
+      setStatusMessage("Todo Added")
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 2000);
     } else {
       Alert.alert('OOPS','Todos must me over 3 characters', [{
         text: 'Understood', onPress: () => console.log('alert closed')}
       ])
     }
-    
   }
+
   
   return (
     // <components.Sandbox />
@@ -55,8 +60,11 @@ export default function App() {
         <View style={styles.content} >
           {/* todo form */}
           <components.AddTodo 
-          submitHandler={submitHandler}/>
-          <View style={styles.list}  >
+          submitHandler={submitHandler}
+          statusMessage={statusMessage} />
+          <View style={styles.list} >
+            {todos.length == 0 ?
+            <Text style={styles.hint} >Empty List </Text> :
             <FlatList
             data={todos}
             renderItem={({ item })=> (
@@ -64,8 +72,7 @@ export default function App() {
               item={item} pressDeleteHandler={pressDeleteHandler} 
               pressCheckHandler={pressCheckHandler} />
             )}
-            />
-            <Text style={styles.hint} >Click on Todo to Remove</Text>
+            />}
           </View>
         </View>
         <StatusBar style={{backgroundColor: styles.container.backgroundColor}} />
@@ -92,7 +99,9 @@ const styles = StyleSheet.create({
   hint : {
     marginTop: 20,
     textAlign: 'center',
-    color: "#b5836e"
+    color: "#e34114",
+    fontWeight: "500",
+    fontSize: 18
   }
 
 });
