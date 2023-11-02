@@ -17,7 +17,7 @@ This was made with the guide of NetNinja's React-Native course, but I also added
     - __Clone clone the default branch (main)__:
       
         `git clone https://github.com/Cams-Plan/React-Native_Todo_App.git <DIRECTORY NAME [Optional]>`
-    - __Clone the a specific branch__:
+    - __Clone a specific branch__:
       
         `git clone -b <BRANCH NAME> https://github.com/Cams-Plan/React-Native_Todo_App.git <DIRECTORY NAME [Optional]>`
 2. Enter your local project directory
